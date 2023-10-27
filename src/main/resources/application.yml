@@ -1,6 +1,9 @@
+
 spring:
   # profiles:
   #   active: local
+  application:
+    name: the-spring-boot-project
   datasource:
     url: jdbc:h2:mem:testdb
     username: sa
