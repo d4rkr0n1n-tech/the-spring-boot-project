@@ -1,5 +1,6 @@
 package com.d4rkr0n1n.project.model;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import jakarta.persistence.Entity;
@@ -19,4 +20,8 @@ public class User {
     private UUID id;
 
     private String name;
+
+    private LocalDateTime createdAt;
+
+    private LocalDateTime modifiedAt;
 }
