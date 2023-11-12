@@ -15,12 +15,20 @@ import com.d4rkr0n1n.project.service.UserService;
 @RequestMapping("/api/v1/user")
 public class UserController {
 
-    @Autowired
-    UserService userService;
+    private final UserService userService;
 
-    @PostMapping(value = "/createUser", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> test() {
-       return ResponseEntity.status(HttpStatus.CREATED).body(userService.createUser());
+    public UserController(@Autowired UserService userService) {
+        this.userService = userService;
     }
 
+    /**
+     * Handles the HTTP POST request to create a new user.
+     *
+     * @return ResponseEntity with the HTTP status code and the created user object.
+     */
+    @PostMapping(value = "/createUser", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<User> createUser() {
+        User createdUser = userService.createUser();
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdUser);
+    }
 }

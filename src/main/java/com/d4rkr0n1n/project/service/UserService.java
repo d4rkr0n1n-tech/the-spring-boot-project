@@ -9,8 +9,11 @@ import com.d4rkr0n1n.project.repository.UserRepository;
 @Service
 public class UserService{
 
-    @Autowired
-    UserRepository userRepository;
+    private final UserRepository userRepository;
+
+    public UserService(@Autowired UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     public User createUser() {
         User user = new User();
@@ -18,6 +21,4 @@ public class UserService{
         userRepository.save(user);
         return user;
     }
-    
-    
 }

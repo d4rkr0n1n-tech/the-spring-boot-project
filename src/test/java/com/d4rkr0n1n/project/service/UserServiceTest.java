@@ -5,23 +5,25 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.d4rkr0n1n.project.model.User;
 import com.d4rkr0n1n.project.repository.UserRepository;
-@SpringBootTest
-public class UserServiceTest {
+@ExtendWith(MockitoExtension.class)
+class UserServiceTest {
 
-    @Autowired
+    @InjectMocks
     UserService userService;
 
     @Mock
     UserRepository userRepository;
+
     @Test
-    public void test_createUser_success() {
+    void test_createUser_success() {
         // Given
         User user = new User();
         user.setName("John Doe");
