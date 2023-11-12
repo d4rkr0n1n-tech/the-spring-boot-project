@@ -29,7 +29,7 @@ class UserServiceTest {
         user.setName("John Doe");
         when(userRepository.save(Mockito.any(User.class))).thenReturn(user);
         // When
-        User result = userService.createUser();
+        User result = userService.createUser(user);
         // Then
         assertNotNull(result);
         assertEquals("John Doe", result.getName());

@@ -1,6 +1,6 @@
 package com.d4rkr0n1n.project.controller;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.jupiter.api.Test;
@@ -20,8 +20,8 @@ class UserControllerTest {
     private UserService userService;
     
     @Test
-    void test_createUser_Successfully() throws Exception {
-        mockMvc.perform(post("/api/v1/user/createUser"))
+    void test_getAllUsers_Successfully() throws Exception {
+        mockMvc.perform(get("/api/v1/Users"))
             .andExpect(status().isCreated());
     }
 }
