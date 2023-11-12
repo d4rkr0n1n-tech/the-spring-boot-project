@@ -3,8 +3,8 @@ package com.d4rkr0n1n.project.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.d4rkr0n1n.project.data.UserRepository;
 import com.d4rkr0n1n.project.model.User;
-import com.d4rkr0n1n.project.repository.UserRepository;
 
 @Service
 public class UserService{
