@@ -5,6 +5,7 @@
 ## Project Structure
 
 ```lua
+.
 ├── .github
 │   ├── workflows
 │   │   └── codeql.yml
