@@ -1,4 +1,4 @@
-package com.d4rkr0n1n.project.repository;
+package com.d4rkr0n1n.project.data;
 
 import java.util.UUID;
 
